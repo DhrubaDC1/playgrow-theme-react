@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Navbar from "./components/navbar";
+import Header from "./components/header";
+import Carousel from "./components/carousel";
+import Cribs from "./components/cribs";
+import Blog from "./components/blog";
+import Reviews from "./components/reviews";
+import Newsletter from "./components/newsletter";
+import NewArrival from "./components/newArrival";
+import Categories from "./components/categories";
+import Collections from "./components/collections";
+import Gallery from "./components/gallery";
+import About from "./components/about";
+import Footer from "./components/footer";
 
 function App() {
   return (
     <>
-    <div className='bg-black flex flex-row justify-between text-white'>
-      <div id='col-1' className='flex flex-row px-4 gap-1'>
-        <p>icon</p>
-        <p>NEWSLETTER</p>
-      </div>
-      <div id='col-2' className='flex flex-row px-4 gap-1'>
-        <p>HOME</p>
-        <p>PAGES</p>
-        <p>SHOP</p>
-        <p>BLOG</p>
-      </div>
-      <div id='col-3' className='flex flex-row px-4 gap-4'>
-        <div className='flex flex-row gap-1'>
-          <p>icon</p>
-          <p>SEARCH</p>
-        </div>
-        <div className='flex flex-row gap-1'>
-          <p>F</p>
-          <p>I</p>
-          <p>T</p>
-          <p>P</p>
-        </div>
-      </div>
-    </div>
+      <Navbar />
+      <Header />
+      <Carousel />
+      <Cribs />
+      <Blog />
+      <Reviews />
+      <Newsletter />
+      <NewArrival />
+      <Categories />
+      <Collections />
+      <Gallery />
+      <About />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
