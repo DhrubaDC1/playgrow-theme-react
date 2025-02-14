@@ -12,6 +12,7 @@ import Gallery from "../components/gallery";
 const HomePage = () => {
   return (
     <>
+      <div className="h-4"></div>
       <Header />
       <div className="h-4"></div>
       <Carousel />
