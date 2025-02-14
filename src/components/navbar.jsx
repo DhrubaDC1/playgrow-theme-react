@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className="bg-[#F7F3F0] flex flex-row justify-between items-center text-black px-5">
       <div
         id="col-1"
-        className="flex flex-row px-4 gap-2 py-2 justify-center items-center"
+        className="flex flex-row px-4 gap-2 py-3 justify-center items-center"
       >
         <img src="assets/subscribe-icon.png" alt="" srcset="" />
         <p>NEWSLETTER</p>

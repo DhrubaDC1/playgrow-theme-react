@@ -12,25 +12,15 @@ import Gallery from "../components/gallery";
 const HomePage = () => {
   return (
     <>
-      <div className="h-4"></div>
       <Header />
-      <div className="h-4"></div>
       <Carousel />
-      <div className="h-4"></div>
       <Cribs />
-      <div className="h-4"></div>
       <Blog />
-      <div className="h-4"></div>
       <Reviews />
-      <div className="h-4"></div>
       <Newsletter />
-      <div className="h-4"></div>
       <NewArrival />
-      <div className="h-4"></div>
       <Categories />
-      <div className="h-4"></div>
       <Collections />
-      <div className="h-4"></div>
       <Gallery />
     </>
   );

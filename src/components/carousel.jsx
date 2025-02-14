@@ -2,9 +2,9 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "/path-to-image1.png",
-  "/path-to-image2.png",
-  "/path-to-image3.png",
+  "/assets/slide 1.png",
+  "/assets/slide 2.png",
+  "/assets/slide 3.png",
 ];
 
 const Carousel = () => {
@@ -19,7 +19,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
+    <div className="relative w-full px-[10%] mx-auto">
       {/* Carousel Images */}
       <div className="overflow-hidden">
         <img
