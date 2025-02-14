@@ -1,5 +1,5 @@
 const Carousel = () => {
-  return <div>Carousel Component</div>;
+  return <div className="bg-black text-white">Carousel Component</div>;
 };
 
 export default Carousel;

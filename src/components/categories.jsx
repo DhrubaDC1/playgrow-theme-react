@@ -1,5 +1,9 @@
 const Categories = () => {
-  return <div>Categories Component</div>;
+  return (
+    <div className="bg-black text-white">
+      <p>Categories</p>
+    </div>
+  );
 };
 
 export default Categories;
