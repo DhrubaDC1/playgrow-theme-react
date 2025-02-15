@@ -1,11 +1,11 @@
-import searchIcon from "../../public/assets/search.svg";
-import fbIcon from "../../public/assets/fb.svg";
-import igIcon from "../../public/assets/instagram.svg";
-import twitterIcon from "../../public/assets/twitter.svg";
-import pinterestIcon from "../../public/assets/pinterest.svg";
+import searchIcon from "/assets/search.svg";
+import fbIcon from "/assets/fb.svg";
+import igIcon from "/assets/instagram.svg";
+import twitterIcon from "/assets/twitter.svg";
+import pinterestIcon from "/assets/pinterest.svg";
 const Navbar = () => {
   return (
-    <div className="bg-[#F7F3F0] flex flex-row justify-between items-center text-black px-5">
+    <div className="bg-[#F7F3F0] flex flex-row justify-between items-center text-black px-5 w-full">
       <div
         id="col-1"
         className="flex flex-row px-4 gap-2 py-3 justify-center items-center"

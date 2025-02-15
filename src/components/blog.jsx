@@ -1,6 +1,6 @@
 const Blog = () => {
   return (
-    <div className="flex flex-col justify-center items-center py-[5%] gap-10">
+    <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
       <div className="flex flex-col justify-center items-center gap-2 max-w-[25%]">
         <p className="text-[28px]">READ OUR BLOG</p>
         <p className="text-[18px]">
@@ -10,7 +10,7 @@ const Blog = () => {
       </div>
       <div className="flex flex-row justify-center gap-10 px-[16%] text-start">
         <div className="flex flex-col justify-start items-start gap-4">
-          <img src="../../public/assets/blog 1.jpg" />
+          <img src="/assets/blog 1.jpg" />
           <p className="text-[24px]">
             Fun colourful cutlery for toddlers to more enjoy dining
           </p>
@@ -24,7 +24,7 @@ const Blog = () => {
           </button>
         </div>
         <div className="flex flex-col justify-start items-start gap-4">
-          <img src="../../public/assets/blog 2.jpg" />
+          <img src="/assets/blog 2.jpg" />
           <p className="text-[24px]">
             Fun childhood with furry toys ready for best cuddles
           </p>
@@ -38,7 +38,7 @@ const Blog = () => {
           </button>
         </div>
         <div className="flex flex-col justify-start items-start gap-4">
-          <img src="../../public/assets/blog 3.jpg" />
+          <img src="/assets/blog 3.jpg" />
           <p className="text-[24px]">
             Dotted design summertime swimsuit collection for toddlers
           </p>

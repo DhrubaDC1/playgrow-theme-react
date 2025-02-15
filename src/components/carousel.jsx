@@ -1,5 +1,8 @@
-import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const images = [
   "/assets/slide 1.png",
@@ -7,56 +10,51 @@ const images = [
   "/assets/slide 3.png",
 ];
 
+const NextArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <FaChevronRight
+      className="absolute right-[-20px] top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 text-xl"
+      onClick={onClick}
+    />
+  );
+};
+
+const PrevArrow = (props) => {
+  const { onClick } = props;
+  return (
+    <FaChevronLeft
+      className="absolute left-[-20px] top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 text-xl"
+      onClick={onClick}
+    />
+  );
+};
+
 const Carousel = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  const settings = {
+    infinite: true,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
 
   return (
     <div className="relative w-full px-[10%] mx-auto">
-      {/* Carousel Images */}
-      <div className="overflow-hidden">
-        <img
-          src={images[currentIndex]}
-          alt="Carousel Slide"
-          className="w-full rounded-lg transition-all duration-500"
-        />
-      </div>
-
-      {/* Left Arrow */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-gray-700 p-2 rounded-full shadow-lg"
-      >
-        <ChevronLeft size={24} />
-      </button>
-
-      {/* Right Arrow */}
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-gray-700 p-2 rounded-full shadow-lg"
-      >
-        <ChevronRight size={24} />
-      </button>
-
-      {/* Dots for Navigation */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`h-2 w-2 rounded-full transition-all ${
-              index === currentIndex ? "bg-orange-500 w-4" : "bg-gray-300"
-            }`}
-            onClick={() => setCurrentIndex(index)}
-          ></span>
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index} className="flex justify-center">
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              className="w-full rounded-lg"
+            />
+          </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };

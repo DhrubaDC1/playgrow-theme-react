@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <div className="flex flex-row justify-between gap-10 h-[27vh] items-center px-[19%]">
+    <div className="flex flex-row justify-between gap-10 h-[27vh] items-center px-[19%] w-full">
       <div className="flex flex-col gap-3">
         <img src="assets/rainbow.png" />
         <p>NEW IN</p>

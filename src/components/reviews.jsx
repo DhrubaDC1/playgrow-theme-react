@@ -1,20 +1,14 @@
-import starIcon from "../../public/assets/star.svg";
+import starIcon from "/assets/star.svg";
 const Reviews = () => {
   return (
     <div className="flex flex-col justify-center items-center py-[5%] gap-10 bg-[#FDF9F5]">
       <div className="flex flex-col justify-center items-center gap-2 max-w-[25%] text-center">
         <p className="text-[28px]">HAPPY CUSTOMERS</p>
       </div>
+      <img src="/assets/jiraffe.png" className="absolute -left-4 pb-[10%]" />
+      <img src="/assets/bunny.png" className="absolute right-10 pt-[21%]" />
       <img
-        src="../../public/assets/jiraffe.png"
-        className="absolute -left-4 pb-[10%]"
-      />
-      <img
-        src="../../public/assets/bunny.png"
-        className="absolute right-10 pt-[21%]"
-      />
-      <img
-        src="../../public/assets/bunny_love.png"
+        src="/assets/bunny_love.png"
         className="absolute right-10 pt-[10%]"
       />
       <div className="flex flex-row justify-center gap-10 px-[16%] text-start">
