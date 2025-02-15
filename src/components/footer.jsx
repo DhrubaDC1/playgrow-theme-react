@@ -1,33 +1,39 @@
+import fbIcon from "/assets/fb.svg";
+import igIcon from "/assets/instagram.svg";
+import twitterIcon from "/assets/twitter.svg";
+import pinterestIcon from "/assets/pinterest.svg";
+import phoneIcon from "/assets/phone.svg";
+import mailIcon from "/assets/mail.svg";
 const Footer = () => {
   return (
-    <footer className="bg-white text-gray-700 py-10 px-6 border-t">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+    <footer className="bg-white text-gray-700 py-10 px-6 border-t border-gray-200 w-full">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-start">
         {/* Company Section */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">COMPANY</h3>
+          <h3 className="text-lg mb-3">COMPANY</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 About PlayGrow
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Our Experts
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Services & Prices
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Latest News
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 FAQ
               </a>
             </li>
@@ -36,30 +42,30 @@ const Footer = () => {
 
         {/* Customers Section */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">CUSTOMERS</h3>
+          <h3 className="text-lg mb-3">CUSTOMERS</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Read Our Advice
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Get In Touch
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Online Store
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Terms & Conditions
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="#" className="hover:text-black">
                 Ask Away
               </a>
             </li>
@@ -68,26 +74,26 @@ const Footer = () => {
 
         {/* Social Media Section */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">SOCIAL MEDIA</h3>
+          <h3 className="text-lg mb-3">SOCIAL MEDIA</h3>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="hover:underline">
-                🐦 Twitter
+              <a href="#" className="hover:text-black flex flex-row gap-2">
+                <img src={twitterIcon} className="w-3" /> Twitter
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                📸 Instagram
+              <a href="#" className="hover:text-black flex flex-row gap-2">
+                <img src={igIcon} className="w-3" /> Instagram
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                📘 Facebook
+              <a href="#" className="hover:text-black flex flex-row gap-2">
+                <img src={fbIcon} className="w-3" /> Facebook
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
-                📌 Pinterest
+              <a href="#" className="hover:text-black flex flex-row gap-2">
+                <img src={pinterestIcon} className="w-3" /> Pinterest
               </a>
             </li>
           </ul>
@@ -95,16 +101,20 @@ const Footer = () => {
 
         {/* Contact Section */}
         <div>
-          <h3 className="font-semibold text-lg mb-3">CONTACT</h3>
+          <h3 className="text-lg mb-3">CONTACT</h3>
           <p>Monday to Friday 9 a.m. - 5 p.m.</p>
           <ul className="mt-2 space-y-2">
-            <li>📞 012 34 567 8912</li>
-            <li>📞 123 45 678 9123</li>
-            <li>
-              ✉️{" "}
+            <li className="flex flex-row gap-2">
+              <img src={phoneIcon} className="w-3" /> 012 34 567 8912
+            </li>
+            <li className="flex flex-row gap-2">
+              <img src={phoneIcon} className="w-3" /> 123 45 678 9123
+            </li>
+            <li className="flex flex-row gap-2">
+              <img src={mailIcon} className="w-3" />
               <a
                 href="mailto:playgrow@qodeinteractive.com"
-                className="hover:underline"
+                className="hover:text-black"
               >
                 playgrow@qodeinteractive.com
               </a>
@@ -114,29 +124,28 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom Section */}
-      <div className="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center pt-6">
+      <div className="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center pt-6 w-full">
         {/* Logo and Copyright */}
-        <div className="flex items-center space-x-2">
-          <span className="text-2xl font-bold text-orange-600">
-            PLAY<span className="text-gray-700">GROW</span>
-          </span>
-          <span className="text-sm text-gray-500">BABY EQUIPMENT</span>
+        <div className="flex flex-row gap-5">
+          <img src="/assets/footer-logo-img-1.png" className="w-[25%]" />
+          <p className="text-sm text-gray-500 mt-4 md:mt-0 pt-6">
+            © 2023 Qode Interactive, All Rights Reserved
+          </p>
         </div>
-        <p className="text-sm text-gray-500 mt-4 md:mt-0">
-          © 2023 Qode Interactive, All Rights Reserved
-        </p>
 
         {/* Payment Methods */}
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <img src="/visa.png" alt="Visa" className="h-6" />
-          <img src="/mastercard.png" alt="MasterCard" className="h-6" />
-          <img src="/amex.png" alt="American Express" className="h-6" />
-          <img src="/paypal.png" alt="PayPal" className="h-6" />
-        </div>
+        <img
+          src="/assets/footer-img-1.png"
+          className="w-[20%]"
+          alt="Payment Methods"
+        />
       </div>
 
       {/* Back to Top Button */}
-      <div className="fixed bottom-5 right-5 bg-orange-400 text-white px-4 py-2 rounded-full shadow-lg cursor-pointer">
+      <div
+        className="fixed bottom-5 right-5 bg-orange-400 text-white px-4 py-2 rounded-full shadow-lg cursor-pointer"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         TOP
       </div>
     </footer>
