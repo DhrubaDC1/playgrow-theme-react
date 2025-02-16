@@ -13,6 +13,7 @@ const categories = [
   { name: "Cribs", image: "/assets/Product-Category-img-03.png" },
   { name: "Beds", image: "/assets/Product-Category-Img-07.png" },
 ];
+
 const NextArrow = (props) => {
   const { onClick } = props;
   return (
@@ -76,9 +77,9 @@ const Categories = () => {
             <img
               src={category.image}
               alt={category.name}
-              className="w-full h-full object-cover rounded-full overflow-hidden border-2 border-gray-300"
+              className=" cursor-pointer w-full h-full object-cover rounded-full overflow-hidden border-2 border-gray-300 transition-transform duration-300 hover:scale-95"
             />
-            <p className="mt-2 text-sm">{category.name}</p>
+            <p className="cursor-pointer mt-2 text-sm">{category.name}</p>
           </div>
         ))}
       </Slider>

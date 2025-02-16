@@ -23,7 +23,7 @@ const Blog = () => {
   return (
     <div className="flex flex-col justify-center items-center py-8 gap-10 w-full">
       <div className="flex flex-col justify-center items-center gap-2 w-full md:max-w-[25%] px-4">
-        <p className="text-2xl md:text-[28px] font-bold">READ OUR BLOG</p>
+        <p className="text-2xl md:text-[28px]">READ OUR BLOG</p>
         <p className="text-base md:text-[18px] text-center">
           Dignissim enim sit amet venenatis urna convallis ae nean et tortor
           etiam non qu.
@@ -38,7 +38,7 @@ const Blog = () => {
             <img
               src={post.imgSrc}
               alt={`Blog ${index + 1}`}
-              className="w-full object-cover"
+              className="w-full object-cover transition-all duration-300 hover:scale-102"
             />
             <p className="text-xl md:text-[24px] font-semibold">{post.title}</p>
             <p className="text-sm md:text-[15px]">{post.description}</p>

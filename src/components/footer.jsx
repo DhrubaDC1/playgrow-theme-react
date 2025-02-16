@@ -143,7 +143,7 @@ const Footer = () => {
 
       {/* Back to Top Button */}
       <div
-        className="fixed bottom-5 right-5 bg-orange-400 text-white px-4 py-2 rounded-full shadow-lg cursor-pointer"
+        className="fixed bottom-5 right-5 bg-[#DB915E] text-white w-15 h-15 flex justify-center items-center rounded-full shadow-lg cursor-pointer"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         TOP

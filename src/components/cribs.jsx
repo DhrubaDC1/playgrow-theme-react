@@ -43,12 +43,12 @@ const Cribs = () => {
         {cribData.map((crib, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center border-2 rounded-2xl border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300"
+            className="flex flex-col justify-center items-center border-2 border-dotted rounded-2xl border-gray-200 p-6 hover:shadow-lg"
           >
             <img
               src={crib.img}
               alt={crib.title}
-              className="w-full rounded-lg"
+              className="w-full rounded-lg transform transition-transform duration-300 hover:scale-105"
             />
             <p className="text-[13px] text-gray-500 mt-3">{crib.category}</p>
             <p className="text-[20px] font-medium">{crib.title}</p>

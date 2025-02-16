@@ -24,9 +24,12 @@ const Newsletter = () => {
             placeholder="Your Email"
             id="email"
           />
-          <div className="text-center">
-            <button className="bg-[#DB915E] hover:bg-[#C57D4D] text-white px-4 py-3 w-full rounded-md font-medium transition-all">
+          <div className="text-center ">
+            <button className="bg-[#DB915E] hover:bg-[#C57D4D] text-white px-4 py-3 w-full rounded-md font-medium transition-all relative group flex flex-row justify-center items-center gap-2 cursor-pointer">
               Send Message
+              <span className="hidden group-hover:block transition-all duration-300 ease-in-out opacity-0 group-hover:opacity-100">
+                {">"}
+              </span>
             </button>
           </div>
         </div>

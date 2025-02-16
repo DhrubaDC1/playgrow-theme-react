@@ -43,18 +43,22 @@ const NewArrival = () => {
         {newArrivalData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col justify-between items-center border-2 rounded-2xl border-gray-200 p-6 shadow-md hover:shadow-lg transition bg-white"
+            className="flex flex-col justify-between items-center border-2 border-dotted rounded-2xl border-gray-200 p-6 shadow-md hover:shadow-lg transition bg-white"
           >
             {/* Product Image */}
             <img
               src={item.img}
               alt={item.title}
-              className="w-full h-60 object-cover rounded-lg"
+              className="w-full h-60 object-cover rounded-lg hover:scale-110 transition duration-300 cursor-pointer"
             />
 
             {/* Category & Title */}
-            <p className="text-[13px] text-gray-500 mt-4">{item.category}</p>
-            <p className="text-[20px] font-medium text-center">{item.title}</p>
+            <p className="text-[13px] text-gray-500 mt-4 cursor-pointer hover:text-orange-500">
+              {item.category}
+            </p>
+            <p className="text-[20px] font-medium text-center cursor-pointer">
+              {item.title}
+            </p>
 
             {/* Price Display */}
             <div className="flex flex-row gap-2 mt-2">

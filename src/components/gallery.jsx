@@ -1,5 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
 const images = [
   "/assets/h1-img-10.jpg",
   "/assets/h1-img-11.jpg",
@@ -14,8 +25,25 @@ const images = [
   "/assets/h1-img-20.jpg",
   "/assets/h1-img-21.jpg",
 ];
-
 const Gallery = () => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  /*************  ✨ Codeium Command ⭐  *************/
+  /**
+   * Opens the modal with the given image.
+   * @param {string} src - The src of the image to be shown in the modal.
+   */
+  /******  b2ae152c-f9f0-4941-bdfb-5458769d6dc9  *******/
+  const openModal = (src) => {
+    setSelectedImage(src);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <div className="bg-[#F7F3F0] text-black p-10 flex flex-col justify-center items-center w-full h-[100vh]">
       <div className="text-center mb-10">
@@ -35,15 +63,27 @@ const Gallery = () => {
       />
       <div className="grid md:grid-cols-6 grid-cols-3 gap-4 w-[70%]">
         {images.map((src, index) => (
-          <div key={index} className="relative w-full h-full">
+          <div
+            key={index}
+            className="relative w-full h-full group cursor-pointer"
+          >
             <img
               src={src}
               alt={`Gallery Image ${index + 1}`}
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg transition-all duration-300 group-hover:scale-105"
+              onClick={() => openModal(src)}
             />
           </div>
         ))}
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Gallery Image Modal"
+      >
+        <img src={selectedImage} alt="Gallery Image" />
+      </Modal>
     </div>
   );
 };
