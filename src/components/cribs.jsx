@@ -1,4 +1,32 @@
 const Cribs = () => {
+  const cribData = [
+    {
+      img: "/assets/crib1.jpg",
+      category: "BEDS",
+      title: "Premium Bed Wooden",
+      price: "$320.00",
+    },
+    {
+      img: "/assets/crib2.jpg",
+      category: "BEDS",
+      title: "Premium Bed Wooden",
+      originalPrice: "$190.00",
+      discountedPrice: "$190.00",
+    },
+    {
+      img: "/assets/crib3.jpg",
+      category: "BEDS",
+      title: "Premium Bed Wooden",
+      price: "$420.00",
+    },
+    {
+      img: "/assets/crib4.jpg",
+      category: "BEDS",
+      title: "Premium Bed Wooden",
+      price: "$320.00",
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
       <div className="flex flex-col justify-center items-center gap-2 max-w-[25%]">
@@ -9,37 +37,31 @@ const Cribs = () => {
         </p>
       </div>
       <div className="flex flex-row justify-center gap-10">
-        <div className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10">
-          <img src="/assets/crib1.jpg" alt="" srcset="" />
-          <p className="text-[13px] text-gray-500">BEDS</p>
-          <p className="text-[20px]">Premium Bed Wooden</p>
-          <p className="text-[16px] pt-2 text-gray-500">$320.00</p>
-        </div>
-        <div className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10">
-          <img src="/assets/crib2.jpg" alt="" srcset="" />
-          <p className="text-[13px] text-gray-500">BEDS</p>
-          <p className="text-[20px]">Premium Bed Wooden</p>
-          <div className="flex flex-row gap-2">
-            <p className="text-[16px] pt-2 text-gray-300 line-through">
-              $190.00
-            </p>
-            <p className="text-[16px] pt-2 text-gray-500">$190.00</p>
+        {cribData.map((crib, index) => (
+          <div
+            key={index}
+            className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10"
+          >
+            <img src={crib.img} alt={crib.title} />
+            <p className="text-[13px] text-gray-500">{crib.category}</p>
+            <p className="text-[20px]">{crib.title}</p>
+            {crib.discountedPrice ? (
+              <div className="flex flex-row gap-2">
+                <p className="text-[16px] pt-2 text-gray-300 line-through">
+                  {crib.originalPrice}
+                </p>
+                <p className="text-[16px] pt-2 text-gray-500">
+                  {crib.discountedPrice}
+                </p>
+              </div>
+            ) : (
+              <p className="text-[16px] pt-2 text-gray-500">{crib.price}</p>
+            )}
           </div>
-        </div>
-        <div className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] pb-10">
-          <img src="/assets/crib3.jpg" alt="" srcset="" />
-          <p className="text-[13px] text-gray-500">BEDS</p>
-          <p className="text-[20px]">Premium Bed Wooden</p>
-          <p className="text-[16px] pt-2 text-gray-500">$420.00</p>
-        </div>
-        <div className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10">
-          <img src="/assets/crib4.jpg" alt="" srcset="" />
-          <p className="text-[13px] text-gray-500">BEDS</p>
-          <p className="text-[20px]">Premium Bed Wooden</p>
-          <p className="text-[16px] pt-2 text-gray-500">$320.00</p>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
+
 export default Cribs;
