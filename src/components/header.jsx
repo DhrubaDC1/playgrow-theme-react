@@ -1,26 +1,40 @@
 const Header = () => {
   return (
-    <div className="flex flex-row justify-between gap-10 h-[27vh] items-center px-[19%] w-full">
-      <div className="flex flex-col gap-3">
-        <img src="assets/rainbow.png" />
-        <p>NEW IN</p>
+    <div className="flex flex-col md:flex-row justify-between items-center gap-5 px-4 md:px-[19%] w-full py-4">
+      {/* Left Group: New In and About Us */}
+      <div className="flex flex-row gap-10 items-center">
+        <div className="flex flex-col gap-2 items-center">
+          <img src="assets/rainbow.png" alt="New In" className="w-12" />
+          <p className="text-sm">NEW IN</p>
+        </div>
+        <div className="flex flex-col gap-2 items-center">
+          <img src="assets/star.png" alt="About Us" className="w-12" />
+          <p className="text-sm">ABOUT US</p>
+        </div>
       </div>
-      <div className="flex flex-col gap-3">
-        <img src="assets/star.png" />
-        <p>ABOUT US</p>
-      </div>
+
+      {/* Center: Logo */}
       <div className="flex flex-col items-center justify-center">
-        <img src="assets/logo-main-img.png" className="w-[75%]" />
+        <img
+          src="assets/logo-main-img.png"
+          alt="Logo"
+          className="w-3/4 md:w-[75%]"
+        />
       </div>
-      <div className="flex flex-col gap-3">
-        <img src="assets/hearth.png" />
-        <p>WISHLIST</p>
-      </div>
-      <div className="flex flex-col gap-3">
-        <img src="assets/cart-empty-large.png" />
-        <p>CART</p>
+
+      {/* Right Group: Wishlist and Cart */}
+      <div className="flex flex-row gap-10 items-center">
+        <div className="flex flex-col gap-2 items-center">
+          <img src="assets/hearth.png" alt="Wishlist" className="w-12" />
+          <p className="text-sm">WISHLIST</p>
+        </div>
+        <div className="flex flex-col gap-2 items-center">
+          <img src="assets/cart-empty-large.png" alt="Cart" className="w-12" />
+          <p className="text-sm">CART</p>
+        </div>
       </div>
     </div>
   );
 };
+
 export default Header;

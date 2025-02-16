@@ -14,8 +14,8 @@ const NextArrow = (props) => {
   const { onClick } = props;
   return (
     <FaChevronRight
-      className="absolute right-[-20px] top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 text-xl"
       onClick={onClick}
+      className="absolute right-[-10px] md:right-[-20px] top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 text-xl md:text-2xl z-10"
     />
   );
 };
@@ -24,8 +24,8 @@ const PrevArrow = (props) => {
   const { onClick } = props;
   return (
     <FaChevronLeft
-      className="absolute left-[-20px] top-1/2 -translate-y-1/2 cursor-pointer text-gray-400 text-xl"
       onClick={onClick}
+      className="absolute left-[-10px] md:left-[-20px] top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 text-xl md:text-2xl z-10"
     />
   );
 };
@@ -43,14 +43,14 @@ const Carousel = () => {
   };
 
   return (
-    <div className="relative w-full px-[10%] mx-auto">
+    <div className="relative w-full px-4 md:px-[10%] mx-auto">
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="flex justify-center">
             <img
               src={image}
               alt={`Slide ${index + 1}`}
-              className="w-full rounded-lg"
+              className="w-full object-cover rounded-lg md:max-h-[500px]"
             />
           </div>
         ))}

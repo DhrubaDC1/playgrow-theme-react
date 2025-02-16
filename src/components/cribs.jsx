@@ -10,7 +10,7 @@ const Cribs = () => {
       img: "/assets/crib2.jpg",
       category: "BEDS",
       title: "Premium Bed Wooden",
-      originalPrice: "$190.00",
+      originalPrice: "$250.00",
       discountedPrice: "$190.00",
     },
     {
@@ -29,33 +29,44 @@ const Cribs = () => {
 
   return (
     <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
-      <div className="flex flex-col justify-center items-center gap-2 max-w-[25%]">
+      {/* Heading */}
+      <div className="flex flex-col justify-center items-center gap-2 max-w-[40%] text-center">
         <p className="text-[28px]">CRIBS & BASKETS</p>
-        <p className="text-[18px] text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod temp.
+        <p className="text-[16px] text-gray-500 leading-relaxed">
+          Explore our collection of premium wooden beds designed for comfort and
+          elegance.
         </p>
       </div>
-      <div className="flex flex-row justify-center gap-10">
+
+      {/* Grid Layout for Cribs */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-[90%]">
         {cribData.map((crib, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10"
+            className="flex flex-col justify-center items-center border-2 rounded-2xl border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300"
           >
-            <img src={crib.img} alt={crib.title} />
-            <p className="text-[13px] text-gray-500">{crib.category}</p>
-            <p className="text-[20px]">{crib.title}</p>
+            <img
+              src={crib.img}
+              alt={crib.title}
+              className="w-full rounded-lg"
+            />
+            <p className="text-[13px] text-gray-500 mt-3">{crib.category}</p>
+            <p className="text-[20px] font-medium">{crib.title}</p>
+
+            {/* Price Display */}
             {crib.discountedPrice ? (
               <div className="flex flex-row gap-2">
-                <p className="text-[16px] pt-2 text-gray-300 line-through">
+                <p className="text-[16px] pt-2 text-gray-400 line-through">
                   {crib.originalPrice}
                 </p>
-                <p className="text-[16px] pt-2 text-gray-500">
+                <p className="text-[16px] pt-2 text-red-500 font-semibold">
                   {crib.discountedPrice}
                 </p>
               </div>
             ) : (
-              <p className="text-[16px] pt-2 text-gray-500">{crib.price}</p>
+              <p className="text-[16px] pt-2 text-gray-500 font-medium">
+                {crib.price}
+              </p>
             )}
           </div>
         ))}

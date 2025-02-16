@@ -3,20 +3,20 @@ const NewArrival = () => {
     {
       img: "/assets/na_1.jpg",
       category: "CARRIAGE",
-      title: "Baby Lether Carriage",
+      title: "Baby Leather Carriage",
       price: "$320.00",
     },
     {
       img: "/assets/na_2.jpg",
       category: "CARRIAGE",
       title: "White Carriage",
-      originalPrice: "$190.00",
+      originalPrice: "$220.00",
       discountedPrice: "$190.00",
     },
     {
       img: "/assets/na_3.jpg",
       category: "CARRIAGE",
-      title: "Brown Lether Carriage",
+      title: "Brown Leather Carriage",
       price: "$420.00",
     },
     {
@@ -28,35 +28,51 @@ const NewArrival = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
-      <div className="flex flex-col justify-center items-center gap-2 max-w-[25%]">
+    <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full bg-[#FDF9F5]">
+      {/* Header Section */}
+      <div className="flex flex-col justify-center items-center gap-2 max-w-[40%] text-center">
         <p className="text-[28px]">NEW ARRIVAL</p>
-        <p className="text-[18px] text-gray-500">
-          Consectetur adipiscing elit ut aliquam duis convalli convalli tellus
-          id interdum ve.
+        <p className="text-[18px] text-gray-500 leading-relaxed">
+          Consectetur adipiscing elit ut aliquam duis convallis tellus id
+          interdum.
         </p>
       </div>
-      <div className="flex flex-row justify-center gap-10">
+
+      {/* Items Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-10 w-full">
         {newArrivalData.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col justify-center items-center border-2 rounded-4xl border-gray-200 w-[18vw] py-10"
+            className="flex flex-col justify-between items-center border-2 rounded-2xl border-gray-200 p-6 shadow-md hover:shadow-lg transition bg-white"
           >
-            <img src={item.img} alt={item.title} />
-            <p className="text-[13px] text-gray-500">{item.category}</p>
-            <p className="text-[20px]">{item.title}</p>
-            {item.discountedPrice ? (
-              <div className="flex flex-row gap-2">
-                <p className="text-[16px] pt-2 text-gray-300 line-through">
-                  {item.originalPrice}
+            {/* Product Image */}
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-60 object-cover rounded-lg"
+            />
+
+            {/* Category & Title */}
+            <p className="text-[13px] text-gray-500 mt-4">{item.category}</p>
+            <p className="text-[20px] font-medium text-center">{item.title}</p>
+
+            {/* Price Display */}
+            <div className="flex flex-row gap-2 mt-2">
+              {item.discountedPrice && item.originalPrice ? (
+                <>
+                  <p className="text-[16px] text-gray-400 line-through">
+                    {item.originalPrice}
+                  </p>
+                  <p className="text-[16px] font-semibold text-red-500">
+                    {item.discountedPrice}
+                  </p>
+                </>
+              ) : (
+                <p className="text-[16px] font-semibold text-gray-700">
+                  {item.price}
                 </p>
-                <p className="text-[16px] pt-2 text-gray-500">
-                  {item.discountedPrice}
-                </p>
-              </div>
-            ) : (
-              <p className="text-[16px] pt-2 text-gray-500">{item.price}</p>
-            )}
+              )}
+            </div>
           </div>
         ))}
       </div>

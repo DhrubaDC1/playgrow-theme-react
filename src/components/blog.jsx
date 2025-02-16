@@ -21,24 +21,28 @@ const Blog = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
-      <div className="flex flex-col justify-center items-center gap-2 max-w-[25%]">
-        <p className="text-[28px]">READ OUR BLOG</p>
-        <p className="text-[18px]">
+    <div className="flex flex-col justify-center items-center py-8 gap-10 w-full">
+      <div className="flex flex-col justify-center items-center gap-2 w-full md:max-w-[25%] px-4">
+        <p className="text-2xl md:text-[28px] font-bold">READ OUR BLOG</p>
+        <p className="text-base md:text-[18px] text-center">
           Dignissim enim sit amet venenatis urna convallis ae nean et tortor
           etiam non qu.
         </p>
       </div>
-      <div className="flex flex-row justify-center gap-10 px-[16%] text-start">
+      <div className="flex flex-col md:flex-row justify-center gap-10 px-4 md:px-[16%] text-start">
         {blogPosts.map((post, index) => (
           <div
             key={index}
-            className="flex flex-col justify-start items-start gap-4"
+            className="flex flex-col justify-start items-start gap-4 w-full md:w-auto"
           >
-            <img src={post.imgSrc} alt={`Blog ${index + 1}`} />
-            <p className="text-[24px]">{post.title}</p>
-            <p className="text-[15px]">{post.description}</p>
-            <button className="text-[#DB915E] font-semibold text-[14px]">
+            <img
+              src={post.imgSrc}
+              alt={`Blog ${index + 1}`}
+              className="w-full object-cover"
+            />
+            <p className="text-xl md:text-[24px] font-semibold">{post.title}</p>
+            <p className="text-sm md:text-[15px]">{post.description}</p>
+            <button className="text-[#DB915E] font-semibold text-xs md:text-[14px]">
               READ MORE
             </button>
           </div>
