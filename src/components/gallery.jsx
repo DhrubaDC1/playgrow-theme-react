@@ -27,13 +27,13 @@ const Gallery = () => {
       </div>
       <img
         src="/assets/main-img-27.png"
-        className="absolute left-10 pt-[41%]"
+        className="absolute left-10 pt-[41%] hidden md:block"
       />
       <img
         src="/assets/main-img-24.png"
-        className="absolute right-10 pb-[39%]"
+        className="absolute right-10 pb-[39%] hidden md:block"
       />
-      <div className="grid grid-cols-6 gap-4 w-[70%]">
+      <div className="grid md:grid-cols-6 grid-cols-3 gap-4 w-[70%]">
         {images.map((src, index) => (
           <div key={index} className="relative w-full h-full">
             <img

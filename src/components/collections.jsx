@@ -15,7 +15,7 @@ const Collections = () => {
   ];
 
   return (
-    <div className="w-full py-[7%] flex flex-row justify-center items-center gap-[3%]">
+    <div className="w-full py-[7%] flex flex-row justify-center items-start gap-[3%]">
       {collectionsData.map((collection, index) => (
         <div
           key={index}

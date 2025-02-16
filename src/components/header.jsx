@@ -1,8 +1,8 @@
 const Header = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-5 px-4 md:px-[19%] w-full py-4">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-5 px-4 md:px-[19%] w-full py-20">
       {/* Left Group: New In and About Us */}
-      <div className="flex flex-row gap-10 items-center">
+      <div className="flex flex-row gap-10 md:gap-20 items-center">
         <div className="flex flex-col gap-2 items-center">
           <img src="assets/rainbow.png" alt="New In" className="w-12" />
           <p className="text-sm">NEW IN</p>
@@ -23,7 +23,7 @@ const Header = () => {
       </div>
 
       {/* Right Group: Wishlist and Cart */}
-      <div className="flex flex-row gap-10 items-center">
+      <div className="flex flex-row gap-10 md:gap-20 items-center">
         <div className="flex flex-col gap-2 items-center">
           <img src="assets/hearth.png" alt="Wishlist" className="w-12" />
           <p className="text-sm">WISHLIST</p>

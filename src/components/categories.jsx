@@ -66,7 +66,7 @@ const Categories = () => {
   };
 
   return (
-    <div className="relative w-[70vw] px-4">
+    <div className="relative w-[70vw] py-4 px-4">
       <Slider {...settings}>
         {categories.map((category, index) => (
           <div
