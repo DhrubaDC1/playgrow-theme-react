@@ -3,8 +3,14 @@ import fbIcon from "/assets/fb.svg";
 import igIcon from "/assets/instagram.svg";
 import twitterIcon from "/assets/twitter.svg";
 import pinterestIcon from "/assets/pinterest.svg";
+import { ThreeDots } from "react-loader-spinner";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [showHomeLoader, setShowHomeLoader] = useState(false);
+  const [showPagesLoader, setShowPagesLoader] = useState(false);
+  const [showShopLoader, setShowShopLoader] = useState(false);
+  const [showBlogLoader, setShowBlogLoader] = useState(false);
   return (
     <div className="bg-[#F7F3F0] flex flex-col md:flex-row justify-between items-center text-black px-5 w-full">
       <div
@@ -22,10 +28,74 @@ const Navbar = () => {
         id="col-2"
         className="flex flex-row px-4 gap-10 items-center justify-center w-full md:w-[25%] py-3 md:py-0"
       >
-        <button className="cursor-pointer">HOME</button>
-        <button className="cursor-pointer">PAGES</button>
-        <button className="cursor-pointer">SHOP</button>
-        <button className="cursor-pointer">BLOG</button>
+        <div
+          className="flex flex-col relative h-[20px] justify-start items-center"
+          onMouseEnter={() => setShowHomeLoader(true)}
+          onMouseLeave={() => setShowHomeLoader(false)}
+        >
+          <button className="cursor-pointer">HOME</button>
+          {showHomeLoader && (
+            <ThreeDots
+              visible={true}
+              height="20px"
+              width="20px"
+              color="#4fa94d"
+              radius="9"
+              ariaLabel="three-dots-loading"
+            />
+          )}
+        </div>
+        <div
+          className="flex flex-col relative h-[20px] justify-start items-center"
+          onMouseEnter={() => setShowPagesLoader(true)}
+          onMouseLeave={() => setShowPagesLoader(false)}
+        >
+          <button className="cursor-pointer">PAGES</button>
+          {showPagesLoader && (
+            <ThreeDots
+              visible={true}
+              height="20px"
+              width="20px"
+              color="#4fa94d"
+              radius="9"
+              ariaLabel="three-dots-loading"
+            />
+          )}
+        </div>
+        <div
+          className="flex flex-col relative h-[20px] justify-start items-center"
+          onMouseEnter={() => setShowShopLoader(true)}
+          onMouseLeave={() => setShowShopLoader(false)}
+        >
+          <button className="cursor-pointer">SHOP</button>
+          {showShopLoader && (
+            <ThreeDots
+              visible={true}
+              height="20px"
+              width="20px"
+              color="#4fa94d"
+              radius="9"
+              ariaLabel="three-dots-loading"
+            />
+          )}
+        </div>
+        <div
+          className="flex flex-col relative h-[20px] justify-start items-center"
+          onMouseEnter={() => setShowBlogLoader(true)}
+          onMouseLeave={() => setShowBlogLoader(false)}
+        >
+          <button className="cursor-pointer">BLOG</button>
+          {showBlogLoader && (
+            <ThreeDots
+              visible={true}
+              height="20px"
+              width="20px"
+              color="#4fa94d"
+              radius="9"
+              ariaLabel="three-dots-loading"
+            />
+          )}
+        </div>
       </div>
       <div
         id="col-3"

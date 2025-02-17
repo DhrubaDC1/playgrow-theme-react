@@ -24,7 +24,7 @@ const Collections = () => {
           <img src={collection.img} alt={collection.title} />
           <p className="text-[24px]">{collection.title}</p>
           <p className="text-[15px] text-gray-500">{collection.description}</p>
-          <button className="text-[#DB915E] font-semibold w-fit">
+          <button className="text-[#DB915E] font-semibold w-fit cursor-pointer">
             {collection.buttonText}
           </button>
         </div>
