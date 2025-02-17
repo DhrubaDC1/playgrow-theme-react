@@ -9,20 +9,20 @@ const Cribs = ({ cartData, setCartData }) => {
     {
       img: "/assets/crib2.jpg",
       category: "BEDS",
-      title: "Premium Bed Wooden",
+      title: "Baby Wooden Crib Small",
       originalPrice: "$250.00",
-      discountedPrice: "$190.00",
+      price: "$190.00",
     },
     {
       img: "/assets/crib3.jpg",
       category: "BEDS",
-      title: "Premium Bed Wooden",
+      title: "The Candy Cloud Crib",
       price: "$420.00",
     },
     {
       img: "/assets/crib4.jpg",
       category: "BEDS",
-      title: "Premium Bed Wooden",
+      title: "Dreamer Bedside Crib",
       price: "$320.00",
     },
   ];
@@ -58,7 +58,7 @@ const Cribs = ({ cartData, setCartData }) => {
 
             {/* Price Display or Add to Cart Button on Hover */}
             <div className="flex flex-row gap-2">
-              {crib.discountedPrice ? (
+              {crib.price ? (
                 <>
                   <div
                     className="flex flex-row gap-2"
@@ -76,7 +76,7 @@ const Cribs = ({ cartData, setCartData }) => {
                       {crib.originalPrice}
                     </p>
                     <p className="text-[16px] pt-2 text-red-500 font-semibold py-2">
-                      {crib.discountedPrice}
+                      {crib.price}
                     </p>
                   </div>
                   <button

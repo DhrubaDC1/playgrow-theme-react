@@ -11,7 +11,7 @@ const NewArrival = ({ cartData, setCartData }) => {
       category: "CARRIAGE",
       title: "White Carriage",
       originalPrice: "$220.00",
-      discountedPrice: "$190.00",
+      price: "$190.00",
     },
     {
       img: "/assets/na_3.jpg",
@@ -64,7 +64,7 @@ const NewArrival = ({ cartData, setCartData }) => {
 
             {/* Price Display */}
             <div className="flex flex-row gap-2">
-              {item.discountedPrice ? (
+              {item.price ? (
                 <>
                   <div
                     className="flex flex-row gap-2"
@@ -82,7 +82,7 @@ const NewArrival = ({ cartData, setCartData }) => {
                       {item.originalPrice}
                     </p>
                     <p className="text-[16px] pt-2 text-red-500 font-semibold py-2">
-                      {item.discountedPrice}
+                      {item.price}
                     </p>
                   </div>
                   <button

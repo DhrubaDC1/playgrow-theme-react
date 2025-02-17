@@ -94,11 +94,73 @@ const Header = ({ cartData, setCartData }) => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Modal Content */}
-              <div className="p-4 pt-10">
+              <div className="p-4 pt-10 overflow-y-auto h-[80vh] modalScroll">
                 <h2 className="text-2xl mb-4">SHOPPING CART</h2>
-                <p className="text-md text-gray-600 pt-10 pl-4 text-start">
-                  No products in the cart.
-                </p>
+                {cartData.length === 0 ? (
+                  <p className="text-md text-gray-600 pt-10 pl-4 text-start">
+                    No products in the cart.
+                  </p>
+                ) : (
+                  Object.values(
+                    cartData.reduce((acc, item) => {
+                      if (!acc[item.title]) {
+                        acc[item.title] = { ...item, quantity: 0 };
+                      }
+                      acc[item.title].quantity += 1;
+                      return acc;
+                    }, {})
+                  ).map((item, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-row justify-between items-center py-4 px-4 border-t border-gray-300"
+                    >
+                      <img
+                        src={item.img}
+                        alt={item.title}
+                        className="w-20 h-20 object-cover"
+                      />
+                      <div className="flex flex-col justify-center">
+                        <p className="text-md">{item.title}</p>
+                        <p className="text-sm text-gray-600">
+                          Unit Price: {item.price}
+                        </p>
+                      </div>
+                      <div className="flex flex-col justify-center">
+                        <p className="text-md">
+                          Total Selected: {item.quantity}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          Total Price: $
+                          {parseFloat(item.price.replace("$", "")) *
+                            item.quantity}
+                        </p>
+                      </div>
+                    </div>
+                  ))
+                )}
+              </div>
+              <div className="pt-4">
+                <div className="flex flex-row justify-between text-md border-t-1 border-b-1 py-4 border-gray-400 mx-16 px-3">
+                  <p>TOTAL:</p>
+                  <p className="text-gray-500">
+                    $
+                    {cartData.reduce((acc, item) => {
+                      return (
+                        acc +
+                        parseFloat(item.price.replace("$", "")) *
+                          cartData.filter((i) => i.title === item.title).length
+                      );
+                    }, 0)}
+                  </p>
+                </div>
+                <div className="flex justify-evenly items-center mt-6 text-lg">
+                  <button className="bg-[#DB915E] text-white px-10 py-4 hover:bg-[#af7c5a] transition cursor-pointer">
+                    VIEW CART
+                  </button>
+                  <button className="bg-[#B1CECA] text-white px-10 py-4 hover:bg-[#89a8a5] transition cursor-pointer">
+                    CHECKOUT
+                  </button>
+                </div>
               </div>
               <button
                 className="absolute top-4 right-4"
