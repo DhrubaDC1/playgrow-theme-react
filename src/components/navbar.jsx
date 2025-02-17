@@ -39,7 +39,7 @@ const Navbar = () => {
               visible={true}
               height="20px"
               width="20px"
-              color="#4fa94d"
+              color="#DB915E"
               radius="9"
               ariaLabel="three-dots-loading"
             />
@@ -56,7 +56,7 @@ const Navbar = () => {
               visible={true}
               height="20px"
               width="20px"
-              color="#4fa94d"
+              color="#DB915E"
               radius="9"
               ariaLabel="three-dots-loading"
             />
@@ -73,7 +73,7 @@ const Navbar = () => {
               visible={true}
               height="20px"
               width="20px"
-              color="#4fa94d"
+              color="#DB915E"
               radius="9"
               ariaLabel="three-dots-loading"
             />
@@ -90,7 +90,7 @@ const Navbar = () => {
               visible={true}
               height="20px"
               width="20px"
-              color="#4fa94d"
+              color="#DB915E"
               radius="9"
               ariaLabel="three-dots-loading"
             />
