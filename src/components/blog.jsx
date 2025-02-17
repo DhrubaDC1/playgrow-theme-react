@@ -42,7 +42,7 @@ const Blog = () => {
             />
             <p className="text-xl md:text-[24px] font-semibold">{post.title}</p>
             <p className="text-sm md:text-[15px]">{post.description}</p>
-            <button className="text-[#DB915E] font-semibold text-xs md:text-[14px]">
+            <button className="text-[#DB915E] font-semibold text-xs md:text-[14px] cursor-pointer">
               READ MORE
             </button>
           </div>
