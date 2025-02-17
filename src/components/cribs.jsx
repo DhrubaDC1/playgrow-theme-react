@@ -53,21 +53,76 @@ const Cribs = () => {
             <p className="text-[13px] text-gray-500 mt-3">{crib.category}</p>
             <p className="text-[20px] font-medium">{crib.title}</p>
 
-            {/* Price Display */}
-            {crib.discountedPrice ? (
-              <div className="flex flex-row gap-2">
-                <p className="text-[16px] pt-2 text-gray-400 line-through">
-                  {crib.originalPrice}
-                </p>
-                <p className="text-[16px] pt-2 text-red-500 font-semibold">
-                  {crib.discountedPrice}
-                </p>
-              </div>
-            ) : (
-              <p className="text-[16px] pt-2 text-gray-500 font-medium">
-                {crib.price}
-              </p>
-            )}
+            {/* Price Display or Add to Cart Button on Hover */}
+            <div className="flex flex-row gap-2">
+              {crib.discountedPrice ? (
+                <>
+                  <div
+                    className="flex flex-row gap-2"
+                    id={`priceDiv-${index}`}
+                    onMouseEnter={() => {
+                      document.getElementById(
+                        `cartButton-${index}`
+                      ).style.display = "flex";
+                      document.getElementById(
+                        `priceDiv-${index}`
+                      ).style.display = "none";
+                    }}
+                  >
+                    <p className="text-[16px] pt-2 text-gray-400 line-through py-2">
+                      {crib.originalPrice}
+                    </p>
+                    <p className="text-[16px] pt-2 text-red-500 font-semibold py-2">
+                      {crib.discountedPrice}
+                    </p>
+                  </div>
+                  <button
+                    id={`cartButton-${index}`}
+                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
+                    onMouseOut={() => {
+                      document.getElementById(
+                        `cartButton-${index}`
+                      ).style.display = "none";
+                      document.getElementById(
+                        `priceDiv-${index}`
+                      ).style.display = "flex";
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </>
+              ) : (
+                <>
+                  <p
+                    className="text-[16px] pt-2 text-gray-500 font-medium py-2"
+                    id={`price-${index}`}
+                    onMouseEnter={() => {
+                      document.getElementById(
+                        `cartButton-${index}`
+                      ).style.display = "block";
+                      document.getElementById(`price-${index}`).style.display =
+                        "none";
+                    }}
+                  >
+                    {crib.price}
+                  </p>
+                  <button
+                    id={`cartButton-${index}`}
+                    style={{ display: "none" }}
+                    onMouseOut={() => {
+                      document.getElementById(
+                        `cartButton-${index}`
+                      ).style.display = "none";
+                      document.getElementById(`price-${index}`).style.display =
+                        "block";
+                    }}
+                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
+                  >
+                    Add to Cart
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         ))}
       </div>

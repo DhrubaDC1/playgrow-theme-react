@@ -61,20 +61,75 @@ const NewArrival = () => {
             </p>
 
             {/* Price Display */}
-            <div className="flex flex-row gap-2 mt-2">
-              {item.discountedPrice && item.originalPrice ? (
+            <div className="flex flex-row gap-2">
+              {item.discountedPrice ? (
                 <>
-                  <p className="text-[16px] text-gray-400 line-through">
-                    {item.originalPrice}
-                  </p>
-                  <p className="text-[16px] font-semibold text-red-500">
-                    {item.discountedPrice}
-                  </p>
+                  <div
+                    className="flex flex-row gap-2"
+                    id={`priceDivNew-${index}`}
+                    onMouseEnter={() => {
+                      document.getElementById(
+                        `cartButtonNew-${index}`
+                      ).style.display = "flex";
+                      document.getElementById(
+                        `priceDivNew-${index}`
+                      ).style.display = "none";
+                    }}
+                  >
+                    <p className="text-[16px] pt-2 text-gray-400 line-through py-2">
+                      {item.originalPrice}
+                    </p>
+                    <p className="text-[16px] pt-2 text-red-500 font-semibold py-2">
+                      {item.discountedPrice}
+                    </p>
+                  </div>
+                  <button
+                    id={`cartButtonNew-${index}`}
+                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
+                    onMouseOut={() => {
+                      document.getElementById(
+                        `cartButtonNew-${index}`
+                      ).style.display = "none";
+                      document.getElementById(
+                        `priceDivNew-${index}`
+                      ).style.display = "flex";
+                    }}
+                  >
+                    Add to Cart
+                  </button>
                 </>
               ) : (
-                <p className="text-[16px] font-semibold text-gray-700">
-                  {item.price}
-                </p>
+                <>
+                  <p
+                    className="text-[16px] pt-2 text-gray-500 font-medium py-2"
+                    id={`priceNew-${index}`}
+                    onMouseEnter={() => {
+                      document.getElementById(
+                        `cartButtonNew-${index}`
+                      ).style.display = "block";
+                      document.getElementById(
+                        `priceNew-${index}`
+                      ).style.display = "none";
+                    }}
+                  >
+                    {item.price}
+                  </p>
+                  <button
+                    id={`cartButtonNew-${index}`}
+                    style={{ display: "none" }}
+                    onMouseOut={() => {
+                      document.getElementById(
+                        `cartButtonNew-${index}`
+                      ).style.display = "none";
+                      document.getElementById(
+                        `priceNew-${index}`
+                      ).style.display = "block";
+                    }}
+                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
+                  >
+                    Add to Cart
+                  </button>
+                </>
               )}
             </div>
           </div>
