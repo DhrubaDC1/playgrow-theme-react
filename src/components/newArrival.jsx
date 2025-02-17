@@ -1,4 +1,4 @@
-const NewArrival = () => {
+const NewArrival = ({ cartData, setCartData }) => {
   const newArrivalData = [
     {
       img: "/assets/na_1.jpg",
@@ -26,7 +26,9 @@ const NewArrival = () => {
       price: "$320.00",
     },
   ];
-
+  const addToCart = (item) => {
+    setCartData([...cartData, item]);
+  };
   return (
     <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full bg-[#FDF9F5]">
       {/* Header Section */}
@@ -94,6 +96,7 @@ const NewArrival = () => {
                         `priceDivNew-${index}`
                       ).style.display = "flex";
                     }}
+                    onClick={() => addToCart(item)}
                   >
                     Add to Cart
                   </button>
@@ -125,6 +128,7 @@ const NewArrival = () => {
                         `priceNew-${index}`
                       ).style.display = "block";
                     }}
+                    onClick={() => addToCart(item)}
                     className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
                   >
                     Add to Cart

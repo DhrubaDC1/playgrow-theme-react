@@ -1,4 +1,4 @@
-const Cribs = () => {
+const Cribs = ({ cartData, setCartData }) => {
   const cribData = [
     {
       img: "/assets/crib1.jpg",
@@ -26,6 +26,9 @@ const Cribs = () => {
       price: "$320.00",
     },
   ];
+  const addToCart = (item) => {
+    setCartData([...cartData, item]);
+  };
 
   return (
     <div className="flex flex-col justify-center items-center py-[5%] gap-10 w-full">
@@ -87,6 +90,7 @@ const Cribs = () => {
                         `priceDiv-${index}`
                       ).style.display = "flex";
                     }}
+                    onClick={() => addToCart(crib)}
                   >
                     Add to Cart
                   </button>
@@ -116,6 +120,7 @@ const Cribs = () => {
                       document.getElementById(`price-${index}`).style.display =
                         "block";
                     }}
+                    onClick={() => addToCart(crib)}
                     className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
                   >
                     Add to Cart

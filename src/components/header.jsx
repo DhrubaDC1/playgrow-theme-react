@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const Header = () => {
+const Header = ({ cartData, setCartData }) => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
+
+  useEffect(() => {
+    console.log(cartData);
+  }, [cartData]);
 
   const modalVariants = {
     hidden: { x: "100%" },

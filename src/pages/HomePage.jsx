@@ -8,17 +8,19 @@ import NewArrival from "../components/newArrival";
 import Categories from "../components/categories";
 import Collections from "../components/collections";
 import Gallery from "../components/gallery";
+import { useState } from "react";
 
 const HomePage = () => {
+  const [cartData, setCartData] = useState([]);
   return (
     <>
-      <Header />
+      <Header cartData={cartData} setCartData={setCartData} />
       <Carousel />
-      <Cribs />
+      <Cribs cartData={cartData} setCartData={setCartData} />
       <Blog />
       <Reviews />
       <Newsletter />
-      <NewArrival />
+      <NewArrival cartData={cartData} setCartData={setCartData} />
       <Categories />
       <Collections />
       <Gallery />
