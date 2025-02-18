@@ -81,7 +81,7 @@ const Cribs = ({ cartData, setCartData }) => {
                   </div>
                   <button
                     id={`cartButton-${index}`}
-                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
+                    style={{ display: "none" }}
                     onMouseOut={() => {
                       document.getElementById(
                         `cartButton-${index}`
@@ -91,6 +91,7 @@ const Cribs = ({ cartData, setCartData }) => {
                       ).style.display = "flex";
                     }}
                     onClick={() => addToCart(crib)}
+                    className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
                   >
                     Add to Cart
                   </button>

@@ -57,20 +57,23 @@ const Header = ({ cartData, setCartData }) => {
           <img
             src="assets/hearth.png"
             alt="Wishlist"
-            className="w-12 hover:translate-y-[-7px] transition-all duration-300"
+            className="w-12 h-12 hover:translate-y-[-7px] transition-all duration-300"
           />
           <p className="text-sm">WISHLIST</p>
         </div>
         <div
-          className="flex flex-col gap-2 items-center cursor-pointer"
+          className="flex flex-col gap-2 items-center cursor-pointer relative"
           onClick={() => setCartModalOpen(true)}
         >
           <img
             src="assets/cart-empty-large.png"
             alt="Cart"
-            className="w-12 hover:translate-y-[-7px] transition-all duration-300"
+            className="w-12 h-12 hover:translate-y-[-7px] transition-all duration-300"
           />
           <p className="text-sm">CART</p>
+          <span className="absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-1">
+            {cartData.length}
+          </span>
         </div>
       </div>
 

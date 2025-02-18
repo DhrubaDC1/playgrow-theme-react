@@ -87,6 +87,7 @@ const NewArrival = ({ cartData, setCartData }) => {
                   </div>
                   <button
                     id={`cartButtonNew-${index}`}
+                    style={{ display: "none" }}
                     className="text-[16px] text-[#DB915E] font-semibold py-2 px-4 transition-all cursor-pointer"
                     onMouseOut={() => {
                       document.getElementById(
