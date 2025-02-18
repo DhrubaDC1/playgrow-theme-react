@@ -2,7 +2,7 @@ import axios from "axios";
 
 async function getProducts() {
   let products = await axios
-    .get("http://localhost:3001/api/products")
+    .get("https://mern-interview-app.onrender.com/api/products")
     .then((res) => res.data);
   return products;
 }
@@ -10,7 +10,7 @@ async function saveProduct(product) {
   console.log(product);
   try {
     const response = await axios.post(
-      "http://localhost:3001/api/save",
+      "https://mern-interview-app.onrender.com/api/save",
       product
     );
     return response.data;
