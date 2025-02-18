@@ -8,10 +8,18 @@ import NewArrival from "../components/newArrival";
 import Categories from "../components/categories";
 import Collections from "../components/collections";
 import Gallery from "../components/gallery";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { getProducts } from "../helper/dbHelper";
 const HomePage = () => {
   const [cartData, setCartData] = useState([]);
+  useEffect(() => {
+    const fetchProducts = async () => {
+      let products = await getProducts();
+      setCartData(products);
+    };
+
+    fetchProducts();
+  }, []);
   return (
     <>
       <Header cartData={cartData} setCartData={setCartData} />

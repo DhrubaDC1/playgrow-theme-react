@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { saveProduct } from "../helper/dbHelper";
 const Header = ({ cartData, setCartData }) => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
 
@@ -169,7 +169,10 @@ const Header = ({ cartData, setCartData }) => {
                   <button className="bg-[#DB915E] text-white px-10 py-4 hover:bg-[#af7c5a] transition cursor-pointer">
                     VIEW CART
                   </button>
-                  <button className="bg-[#B1CECA] text-white px-10 py-4 hover:bg-[#89a8a5] transition cursor-pointer">
+                  <button
+                    className="bg-[#B1CECA] text-white px-10 py-4 hover:bg-[#89a8a5] transition cursor-pointer"
+                    onClick={() => saveProduct(cartData)}
+                  >
                     CHECKOUT
                   </button>
                 </div>
