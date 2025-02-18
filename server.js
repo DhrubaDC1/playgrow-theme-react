@@ -40,12 +40,11 @@ app.post("/api/save", async (req, res) => {
     const db = client.db(dbName);
     const orders = db.collection("orders");
     const data = req.body;
-    console.log(data);
-    const result = await orders.insertMany(data);
+    const result = await orders.insertOne({ data });
     if (result.acknowledged) {
-      res.status(201).json({ message: "Orders saved successfully" });
+      res.status(201).json({ message: "Order saved successfully" });
     } else {
-      res.status(500).json({ message: "Could not save orders" });
+      res.status(500).json({ message: "Could not save order" });
     }
   } catch (err) {
     console.log(err.stack);

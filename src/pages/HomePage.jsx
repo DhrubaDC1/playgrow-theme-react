@@ -9,13 +9,12 @@ import Categories from "../components/categories";
 import Collections from "../components/collections";
 import Gallery from "../components/gallery";
 import { useEffect, useState } from "react";
-import { getProducts } from "../helper/dbHelper";
 const HomePage = () => {
   const [cartData, setCartData] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
-      let products = await getProducts();
-      setCartData(products);
+      let products = localStorage.getItem("cart") || [];
+      setCartData(JSON.parse(products));
     };
 
     fetchProducts();

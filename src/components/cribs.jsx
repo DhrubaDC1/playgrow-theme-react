@@ -27,7 +27,12 @@ const Cribs = ({ cartData, setCartData }) => {
     },
   ];
   const addToCart = (item) => {
-    setCartData([...cartData, item]);
+    setCartData(
+      cartData.concat({
+        _id: new Date().toISOString(),
+        ...item,
+      })
+    );
   };
 
   return (

@@ -5,7 +5,18 @@ const Header = ({ cartData, setCartData }) => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
 
   useEffect(() => {
-    console.log(cartData);
+    if (cartData.length > 0) {
+      const products = cartData.map((item) => item._id);
+      const storedProducts = JSON.parse(localStorage.getItem("cart")) || [];
+      if (
+        storedProducts.length > 0 &&
+        !storedProducts.every((id) => products.includes(id))
+      ) {
+        localStorage.setItem("cart", JSON.stringify(cartData));
+      } else {
+        localStorage.setItem("cart", JSON.stringify(cartData));
+      }
+    }
   }, [cartData]);
 
   const modalVariants = {
@@ -171,7 +182,11 @@ const Header = ({ cartData, setCartData }) => {
                   </button>
                   <button
                     className="bg-[#B1CECA] text-white px-10 py-4 hover:bg-[#89a8a5] transition cursor-pointer"
-                    onClick={() => saveProduct(cartData)}
+                    onClick={() => {
+                      saveProduct(cartData);
+                      localStorage.clear();
+                      setCartData([]);
+                    }}
                   >
                     CHECKOUT
                   </button>
