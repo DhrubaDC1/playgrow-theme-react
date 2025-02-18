@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { saveProduct } from "../helper/dbHelper";
 const Header = ({ cartData, setCartData }) => {
   const [cartModalOpen, setCartModalOpen] = useState(false);
-
+  const [totalCost, setTotalCost] = useState(0);
   useEffect(() => {
     if (cartData.length > 0) {
       const products = cartData.map((item) => item._id);
@@ -17,6 +17,14 @@ const Header = ({ cartData, setCartData }) => {
         localStorage.setItem("cart", JSON.stringify(cartData));
       }
     }
+  }, [cartData]);
+  useEffect(() => {
+    const total = cartData.reduce(
+      (acc, item) => acc + parseFloat(item.price.replace("$", "")),
+      0
+    );
+    console.log(total);
+    setTotalCost(total);
   }, [cartData]);
 
   const modalVariants = {
@@ -166,15 +174,7 @@ const Header = ({ cartData, setCartData }) => {
               <div className="pt-4">
                 <div className="flex flex-row justify-between text-md border-t-1 border-b-1 py-4 border-gray-400 mx-16 px-3">
                   <p>TOTAL:</p>
-                  <p className="text-gray-500">
-                    $
-                    {cartData.reduce((acc, item) => {
-                      return (
-                        acc +
-                        parseFloat(item.price.replace("$", "")) * item.quantity
-                      );
-                    }, 0)}
-                  </p>
+                  <p className="text-gray-500">${totalCost}</p>
                 </div>
                 <div className="flex justify-evenly items-center mt-6 text-lg">
                   <button className="bg-[#DB915E] text-white px-10 py-4 hover:bg-[#af7c5a] transition cursor-pointer">
