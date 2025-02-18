@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import { MongoClient } from "mongodb";
+import "dotenv/config";
 const app = express();
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -22,8 +23,7 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
 
-const connectionString =
-  "mongodb+srv://dhrubachakraborty2000:osyxe6lEsFzf3OCR@cluster0.rl3zq.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const connectionString = process.env.MONGO_URI;
 const dbName = "orders";
 
 app.use(express.json());
