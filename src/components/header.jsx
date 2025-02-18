@@ -20,6 +20,10 @@ const Header = ({ cartData, setCartData }) => {
     exit: { opacity: 0, transition: { duration: 0.3 } },
   };
 
+  const removeItem = (index) => {
+    setCartData(cartData.filter((item, i) => i !== index));
+  };
+
   return (
     <div className="flex flex-col md:flex-row justify-center items-center gap-5 md:gap-10 px-4 md:px-[19%] w-full py-20">
       {/* Left Group: New In and About Us */}
@@ -138,6 +142,12 @@ const Header = ({ cartData, setCartData }) => {
                             item.quantity}
                         </p>
                       </div>
+                      <button
+                        className="bg-[#DB915E] text-white px-4 py-2 hover:bg-[#af7c5a] transition cursor-pointer"
+                        onClick={() => removeItem(index)}
+                      >
+                        REMOVE
+                      </button>
                     </div>
                   ))
                 )}
@@ -150,8 +160,7 @@ const Header = ({ cartData, setCartData }) => {
                     {cartData.reduce((acc, item) => {
                       return (
                         acc +
-                        parseFloat(item.price.replace("$", "")) *
-                          cartData.filter((i) => i.title === item.title).length
+                        parseFloat(item.price.replace("$", "")) * item.quantity
                       );
                     }, 0)}
                   </p>
