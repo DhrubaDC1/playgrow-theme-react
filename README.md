@@ -51,6 +51,71 @@ Before you begin, ensure you have the following installed:
   ```
 3. **Set Up Environment Variables**:
 - Create a .env file in the root directory
-  ```bash
+  ```text
   MONGO_URI=your_mongodb_connection_string
   ```
+4. **Run the Application**:
+   ```bash
+   npm start
+   ```
+- Open your browser at `http://localhost:3001`
+## Project Structure
+```plaintext
+playgrow-theme-react/
+├── public/
+│   └── assets/             # Images and icons
+│       ├── blog 1.jpg      # Blog images
+│       ├── bunny.png       # Illustrations
+│       ├── cart-empty-large.png  # Cart image
+│       ├── crib1.jpg       # Crib images
+│       ├── fb.svg          # Social icons
+│       ├── footer-img-1.png  # Footer assets
+│       ├── h1-img-10.jpg   # Header images
+│       ├── logo-img-1.png  # Logos
+│       ├── main-img-24.png # Main images
+│       ├── na_1.jpg        # New arrivals
+│       ├── product-category-01.png  # Category images
+│       ├── slide 1.png     # Slides
+│       └── star.png        # Stars
+├── src/
+│   ├── components/         # React components
+│   │   ├── blog.jsx
+│   │   ├── carousel.jsx
+│   │   ├── categories.jsx
+│   │   ├── collections.jsx
+│   │   ├── cribs.jsx
+│   │   ├── footer.jsx
+│   │   ├── gallery.jsx
+│   │   ├── header.jsx
+│   │   ├── navbar.jsx
+│   │   ├── newArrival.jsx
+│   │   ├── newsletter.jsx
+│   │   └── reviews.jsx
+│   ├── helper/
+│   │   └── dbHelper.jsx    # DB utilities
+│   ├── pages/
+│   │   └── HomePage.jsx    # Home page
+│   ├── App.css             # App styles
+│   ├── App.jsx             # Main app
+│   ├── index.css           # Global styles
+│   └── main.jsx            # Entry point
+├── .env                    # Env variables
+├── .gitignore              # Git ignore
+├── eslint.config.js        # ESLint config
+├── index.html              # HTML entry
+├── package.json            # Dependencies
+├── server.js               # Backend server
+└── vite.config.js          # Vite config
+```
+
+## Contributing
+Contributions are welcome! To contribute:
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Commit your changes (`git commit -m "Add your feature"`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
+Please run npm run lint to ensure code quality before submitting.
+
+## License
+This project is licensed under the MIT License. Feel free to use, modify, and distribute it as you see fit.
