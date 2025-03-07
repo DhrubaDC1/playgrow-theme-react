@@ -64,19 +64,6 @@ Before you begin, ensure you have the following installed:
 playgrow-theme-react/
 ├── public/
 │   └── assets/             # Images and icons
-│       ├── blog 1.jpg      # Blog images
-│       ├── bunny.png       # Illustrations
-│       ├── cart-empty-large.png  # Cart image
-│       ├── crib1.jpg       # Crib images
-│       ├── fb.svg          # Social icons
-│       ├── footer-img-1.png  # Footer assets
-│       ├── h1-img-10.jpg   # Header images
-│       ├── logo-img-1.png  # Logos
-│       ├── main-img-24.png # Main images
-│       ├── na_1.jpg        # New arrivals
-│       ├── product-category-01.png  # Category images
-│       ├── slide 1.png     # Slides
-│       └── star.png        # Stars
 ├── src/
 │   ├── components/         # React components
 │   │   ├── blog.jsx
